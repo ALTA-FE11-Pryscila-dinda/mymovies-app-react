@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.navbar {
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+}
+h1 {
+  background-color: #2c74b3;
+}
