@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   render() {
@@ -30,18 +31,18 @@ export default class Navbar extends Component {
                 <a>Homepage</a>
               </li>
               <li>
-                <a>Portfolio</a>
-              </li>
-              <li>
-                <a>About</a>
+                <a>Myfavorite</a>
               </li>
             </ul>
           </div>
         </div>
         <div className="navbar-center ">
-          <a className="btn btn-ghost normal-case text-white text-3xl">
+          <Link
+            to="/"
+            className="btn btn-ghost normal-case text-white text-3xl"
+          >
             NetVio
-          </a>
+          </Link>
         </div>
         <div className="navbar-end">
           <button className="btn btn-ghost btn-circle">
