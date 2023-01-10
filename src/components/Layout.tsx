@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+
 import Navbar from "./Navbar";
 
 interface LayoutProps {
@@ -7,9 +8,9 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="w-full h-screen bg-gray-200 flex flex-col overflow-auto">
+    <div className="w-full h-screen bg-gray-200 dark:bg-grey bg-putih flex flex-col overflow-auto">
       <Navbar />
-      <div className="h-full overflow-auto p-3">{children}</div>
+      <div className="h-full w-full overflow-auto">{children}</div>
     </div>
   );
 };

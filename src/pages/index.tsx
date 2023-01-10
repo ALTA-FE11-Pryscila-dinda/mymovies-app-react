@@ -87,7 +87,7 @@ const Index = () => {
           )}
         />
       )}
-      <h1 className="text-center text-4xl p-4 m-2 font-bold rounded-2xl text-white">
+      <h1 className="text-center text-4xl p-4 m-2 font-bold rounded-2xl text-white bg-hijau dark:text-putih dark:bg-navy">
         NOW PLAYING
       </h1>
       <div className="grid grid-cols-4 gap-3 p-3">

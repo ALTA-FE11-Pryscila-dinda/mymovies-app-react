@@ -60,7 +60,7 @@ const DetailMovie = () => {
               />
             )}
           />
-          <div className="bg-blue-900 w-full h-auto">
+          <div className="bg-mint dark:bg-navy text-white w-full h-auto">
             <div className="sm:container sm:flex-row p-16 m-6 flex justify-items-center  ">
               <img
                 style={{ width: 300 }}

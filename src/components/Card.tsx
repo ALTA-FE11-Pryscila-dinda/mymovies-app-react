@@ -20,7 +20,7 @@ const Card: FC<CardProps> = ({ id, image, title, labelButton, onClickFav }) => {
   }
 
   return (
-    <div className="card card-compact bg-base-100 shadow-xl">
+    <div className="card card-compact bg-base-100 shadow-xl dark:bg-putih dark: text-black">
       <figure onClick={() => onClickDetail()}>
         <img
           className="mx-auto"
@@ -32,7 +32,7 @@ const Card: FC<CardProps> = ({ id, image, title, labelButton, onClickFav }) => {
         <h2 className="card-title text-center" onClick={() => onClickDetail()}>
           {title}
         </h2>
-        <div className="card-actions w-full justify-center">
+        <div className="card-actions w-full justify-center ">
           <Button label={labelButton} onClick={onClickFav} />
         </div>
       </div>
