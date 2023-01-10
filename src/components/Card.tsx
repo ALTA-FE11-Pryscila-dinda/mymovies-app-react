@@ -2,7 +2,7 @@ import { Component } from "react";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button from "./Button";
+import Button from "components/Button";
 
 interface CardProps {
   id?: number;

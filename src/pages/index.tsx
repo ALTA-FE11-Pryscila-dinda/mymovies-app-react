@@ -1,15 +1,18 @@
-// Constructor start
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 
-import { SkeletonLoading } from "../components/Loading";
-import Carousel from "../components/Carousel";
-import Layout from "../components/Layout";
-import Card from "../components/Card";
-import { MovieType } from "../utils/types/movie";
-import { useTitle } from "../utils/hooks/customHooks";
+import { SkeletonLoading } from "components/Loading";
+import Carousel from "components/Carousel";
+import Layout from "components/Layout";
+import Card from "components/Card";
+
+import { setFavorites } from "utils/redux/reducers/reducer";
+import { MovieType } from "utils/types/movie";
+import { useTitle } from "utils/hooks/customHooks";
 
 const Index = () => {
+  const dispatch = useDispatch();
   useTitle("NetVio - Movie");
   const [datas, setDatas] = useState<MovieType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -59,6 +62,7 @@ const Index = () => {
       let parseFav: MovieType[] = JSON.parse(checkExist);
       parseFav.push(data);
       localStorage.setItem("FavMovie", JSON.stringify(parseFav));
+      dispatch(setFavorites(parseFav));
     } else {
       localStorage.setItem("FavMovie", JSON.stringify([data]));
       alert("Movie added to favorite");

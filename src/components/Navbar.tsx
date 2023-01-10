@@ -72,7 +72,7 @@ const Navbar = () => {
           className="btn btn-ghost btn-circle"
         >
           <svg
-            className="h-7 w-7"
+            className="h-7 w-7 "
             fill="#000000"
             viewBox="0 0 32 32"
             version="1.1"
