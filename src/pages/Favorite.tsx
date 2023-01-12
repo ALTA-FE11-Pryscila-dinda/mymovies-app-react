@@ -10,7 +10,7 @@ import { RootState } from "utils/types/redux";
 
 const Favorite = () => {
   const dispatch = useDispatch();
-  useTitle("Cinephile - Your Favorite Movie");
+  useTitle("Your Favorite Movie - NetVio");
   const datas = useSelector((state: RootState) => state.data.favorites);
 
   function removeFavorite(data: MovieType) {

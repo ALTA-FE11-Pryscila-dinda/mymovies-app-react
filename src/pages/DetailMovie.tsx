@@ -6,6 +6,7 @@ import { LoadingAnimation } from "components/Loading";
 import Carousel from "components/Carousel";
 import Button from "components/Button";
 import Layout from "components/Layout";
+
 import { MovieType, VideosType } from "utils/types/movie";
 import { useTitle } from "utils/hooks/customHooks";
 
@@ -52,7 +53,7 @@ const DetailMovie = () => {
             content={(data) => (
               <iframe
                 width="100%"
-                height="315"
+                height="95%"
                 src={`https://www.youtube.com/embed/${data.key}`}
                 title={data.name}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -60,34 +61,42 @@ const DetailMovie = () => {
               />
             )}
           />
-          <div className="bg-mint dark:bg-navy text-white w-full h-auto">
-            <div className="sm:container sm:flex-row p-16 m-6 flex justify-items-center  ">
+          <div
+            className=" container lg:container md:container   sm:container w-full justify-center flex justify-items-center
+           h-auto"
+          >
+            <div className="  rounded-2xl flex h-full p-12 w-9/12 dark:bg-navy bg-mint">
               <img
                 style={{ width: 300 }}
-                className=" object-contain rounded"
+                className="object-contain rounded-2xl"
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                 alt={data.title}
               />
 
               <div
-                className="p-5 text-blue-100 font-bold 
+                className="p-5 text-putih
+                 font-bold 
               text-lg items-center"
               >
-                <p>Title: {data.title}</p>
-                <p>
-                  Release Date:{" "}
-                  {moment(data.release_date).format("DD MMMM YYYY")}
+                <p
+                  className="text-center 
+                 text-5xl font-bold"
+                >
+                  {data.title}
                 </p>
-                <p>Runtime: {data.runtime}</p>
+                <br />
+                <p className="text-start">{data.overview}</p>
+                <br />
+                <p>Release : {moment(data.release_date).format("YYYY")}</p>
+                <p>Duration : {data.runtime} minute</p>
                 <p>
-                  Genre:{" "}
+                  Genre :{" "}
                   {data.genres
                     ?.map((genre) => {
                       return genre.name;
                     })
                     .join(", ")}
                 </p>
-                <p className="text-justify">Overview: {data.overview}</p>
                 <br />
                 <Button label=" Watch Now" />
               </div>

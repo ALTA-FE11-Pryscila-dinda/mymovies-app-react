@@ -56,9 +56,7 @@ const Index = () => {
   function handleFavorite(data: MovieType) {
     const checkExist = localStorage.getItem("FavMovie");
     if (checkExist) {
-      /*
-      TODO: Sebelum ditambahkan ke list favorit, silahkan buat pengkondisian/cek terlebih dahulu apakah film yang dipilih sudah ditambahkan atau belum, kasih alert jika ada, jika tidak silahkan push datanya ke localstorage
-      */
+      alert("Movie already added");
       let parseFav: MovieType[] = JSON.parse(checkExist);
       parseFav.push(data);
       localStorage.setItem("FavMovie", JSON.stringify(parseFav));
@@ -76,7 +74,7 @@ const Index = () => {
           datas={datas.slice(0, 5)}
           content={(data) => (
             <div
-              className="w-full h-full flex justify-center items-center bg-cover bg-center"
+              className="w-full h-screen flex justify-center items-center bg-contain  bg-scroll bg-center"
               style={{
                 backgroundImage: `linear-gradient(
                 rgba(0, 0, 0, 0.5),
@@ -84,8 +82,10 @@ const Index = () => {
                 ), url(https://image.tmdb.org/t/p/original${data.poster_path})`,
               }}
             >
-              <p className="text-white tracking-widest font-bold break-words text-2xl">
+              <p className="text-white tracking-widest font-bold break-words  text-center text-2xl">
                 {data.title}
+                <br />
+                {data.overview}
               </p>
             </div>
           )}
